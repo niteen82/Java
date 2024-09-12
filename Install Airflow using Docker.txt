@@ -1,0 +1,54 @@
+https://www.youtube.com/watch?v=TA0R6yeHDqw&list=PLVkNVKK7EVXbBAppT6MY8utsIfwhQyLgf
+
+https://www.youtube.com/watch?v=Sva8rDtlWi4
+
+
+Installation procedure for Airflow using Docker in Windows
+
+Step1: Download and Install Docker
+     https://docs.docker.com/get-docker/
+
+docker --version
+
+
+
+Step2: Create a folder named "Airflow" in any directory and navigate to the created folder
+     mkdir Airflow
+     cd Airflow
+
+Step3: Create a file with the name  "docker-compose.yml".
+
+Step4: Go to the link - "https://airflow.apache.org/docs/apache-airflow/2.4.1/docker-compose.yaml", copy the contents in the link to the 
+file created in the Step 3.
+
+Step5: Copy the "airflow_env.env" file into the folder "Airflow"
+
+Step6: In the folder "Airflow" open the command prompt as admininstrator and run the command "docker compose up -d"
+
+Step7: Once the Installation is complete check the docker for the containers that are running and open the page "localhost:8080" in
+a browser for accessing the WebUI. In the sign in page use "airflow" for user name and password.
+
+Step8: Store the DAGs written in python in the "dags" folder inside the "Airflow" folder.
+
+Step9: Refresh the web UI to find the DAGs.
+
+Step10: Run the DAGs by clicking on the name, Unpause the DAG and trigger the DAG.
+
+
+
+code .
+
+curl 'https://airflow.apache.org/docs/apache-airflow/2.10.0/docker-compose.yaml' -o 'docker-compose.yaml'
+
+docker compose up airflow-init
+
+mkdir dag
+
+mkdir logs
+
+mkdir plugins
+
+Docker compose down
+
+netstat -ano | findstr :8080
+taskkill /PID 6472 /F
